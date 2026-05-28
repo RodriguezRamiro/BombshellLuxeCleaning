@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Services from './components/Services'
 import Transformations from './components/Transformations'
 import Promotions from './components/Promotions'
+import Contact from './components/Contact';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Services />
       <Transformations />
       <Promotions />
+      <Contact />
 
     </>
 
