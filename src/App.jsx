@@ -3,6 +3,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
+import Transformations from './components/Transformations'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Navbar />
       <Hero />
       <Services />
+      <Transformations />
 
     </>
 
