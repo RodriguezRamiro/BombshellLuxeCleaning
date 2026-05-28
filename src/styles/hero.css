@@ -1,0 +1,145 @@
+/* //BomshellLuxeCleaning/src/styles/hero.css */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+      radial-gradient(
+        circle at top,
+        rgba(212,175,55,0.12),
+        transparent 40%
+      ),
+      var(--bg-primary);
+
+  }
+
+  .hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.7)
+      );
+
+  }
+
+  .hero-content{
+
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+
+    animation:fadeUp 1.2s ease;
+
+  }
+
+  .hero-subtitle{
+
+    color:var(--gold-soft);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    margin-bottom:1.5rem;
+
+    font-size:0.9rem;
+
+  }
+
+  .hero h1{
+
+    font-size:clamp(3rem, 8vw, 6rem);
+
+    line-height:1.1;
+
+    margin-bottom:2rem;
+
+  }
+
+  .hero-description{
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    font-size:1.1rem;
+
+    max-width:700px;
+
+    margin:auto auto 3rem;
+
+  }
+
+  .hero-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:1.5rem;
+
+    flex-wrap:wrap;
+
+  }
+
+  .primary-btn,
+  .secondary-btn{
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    font-size:1rem;
+
+    transition:0.3s ease;
+
+  }
+
+  .primary-btn{
+
+    background:var(--gradient-gold);
+
+    color:#000;
+
+    font-weight:700;
+
+  }
+
+  .primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-gold);
+
+  }
+
+  .secondary-btn{
+
+    background:transparent;
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    color:var(--text-primary);
+
+    backdrop-filter:blur(10px);
+
+  }
+
+  .secondary-btn:hover{
+
+    background:rgba(255,255,255,0.05);
+
+  }
