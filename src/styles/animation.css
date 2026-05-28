@@ -1,0 +1,45 @@
+@keyframes fadeUp {
+
+    from{
+      opacity:0;
+      transform:translateY(40px);
+    }
+
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+  }
+
+  @keyframes glowPulse {
+
+    0%{
+      box-shadow:0 0 15px rgba(212,175,55,0.15);
+    }
+
+    50%{
+      box-shadow:0 0 35px rgba(212,175,55,0.35);
+    }
+
+    100%{
+      box-shadow:0 0 15px rgba(212,175,55,0.15);
+    }
+
+  }
+
+  @keyframes float {
+
+    0%{
+      transform:translateY(0px);
+    }
+
+    50%{
+      transform:translateY(-10px);
+    }
+
+    100%{
+      transform:translateY(0px);
+    }
+
+  }
