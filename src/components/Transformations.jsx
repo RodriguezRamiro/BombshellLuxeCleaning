@@ -65,7 +65,7 @@ function Transformations() {
               <div className="image-box">
 
                 <img
-                  src={before}
+                  src={item.before}
                   alt="Before Cleaning"
                 />
 
@@ -78,7 +78,7 @@ function Transformations() {
               <div className="image-box">
 
                 <img
-                  src={after}
+                  src={item.after}
                   alt="After Cleaning"
                 />
 
