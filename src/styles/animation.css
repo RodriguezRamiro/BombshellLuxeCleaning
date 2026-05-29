@@ -1,3 +1,5 @@
+/* //BomshellLuxeCleaning/src/styles/animation.css */
+
 @keyframes fadeUp {
 
     from{
@@ -43,3 +45,31 @@
     }
 
   }
+
+/*  Add Reveal Animation Styles */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+    translateY(40px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+  will-change:
+    opacity,
+    transform;
+
+}
+
+.reveal.active{
+
+  opacity:1;
+
+  transform:
+    translateY(0);
+
+}
