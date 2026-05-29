@@ -1,0 +1,101 @@
+/* //BomshellLuxeCleaning/src/styles/ambientGlow.css */
+
+.ambient-glow-container{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+  }
+
+  .glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:0.12;
+
+    animation:
+      floatGlow 14s ease-in-out infinite;
+
+  }
+
+  .glow-one{
+
+    width:350px;
+    height:350px;
+
+    background:
+      rgba(212,175,55,0.55);
+
+    top:10%;
+    left:-5%;
+
+  }
+
+  .glow-two{
+
+    width:450px;
+    height:450px;
+
+    background:
+      rgba(200,162,255,0.25);
+
+    top:50%;
+    right:-10%;
+
+    animation-delay:4s;
+
+  }
+
+  .glow-three{
+
+    width:300px;
+    height:300px;
+
+    background:
+      rgba(255,255,255,0.12);
+
+    bottom:0%;
+    left:40%;
+
+    animation-delay:7s;
+
+  }
+
+  @keyframes floatGlow{
+
+    0%{
+
+      transform:
+        translateY(0px)
+        translateX(0px);
+
+    }
+
+    50%{
+
+      transform:
+        translateY(-20px)
+        translateX(10px);
+
+    }
+
+    100%{
+
+      transform:
+        translateY(0px)
+        translateX(0px);
+
+    }
+
+  }
