@@ -4,11 +4,14 @@
 import '../styles/footer.css'
 
 import {
-  Instagram,
-  Facebook,
   Mail,
   Phone
 } from 'lucide-react'
+
+import {
+  FaInstagram,
+  FaFacebookF
+} from 'react-icons/fa'
 
 function Footer() {
 
@@ -97,12 +100,12 @@ function Footer() {
 
           <div className="social-icons">
 
-            <a href="/">
-              <Instagram />
+            <a href="https://www.instagram.com/bombshell_luxe_cleaning/">
+              <FaInstagram />
             </a>
 
-            <a href="/">
-              <Facebook />
+            <a href="https://www.facebook.com/people/BomBshell-Luxe-Cleaning/61572643995067/">
+              <FaFacebookF />
             </a>
 
           </div>
@@ -119,7 +122,7 @@ function Footer() {
         </p>
 
         <p>
-          Designed by Rodriguez Code Solutions
+          Designed by RodriguezTech
         </p>
 
       </div>
