@@ -2,6 +2,7 @@
 
 import '../styles/hero.css'
 import Particles from './Particles'
+import { motion } from 'framer-motion'
 
 function Hero() {
 
@@ -13,7 +14,23 @@ function Hero() {
 
       <div className="hero-overlay"></div>
 
-      <div className="hero-content">
+    <motion.div
+      className="hero-content"
+      initial={{
+      opacity:0,
+      y:40
+    }}
+
+      animate={{
+      opacity:1,
+      y:0
+    }}
+
+      transition={{
+      duration:0.9,
+      ease:'easeOut'
+    }}
+  >
 
         <p className="hero-subtitle">
           Tampa Bay Luxury Cleaning Services
@@ -44,7 +61,7 @@ function Hero() {
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
 
