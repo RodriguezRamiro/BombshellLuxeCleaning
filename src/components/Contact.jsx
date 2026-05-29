@@ -77,25 +77,43 @@ function Contact() {
 
         </div>
 
-        <form className="contact-form">
+
+        {/* Replace with your FormSpree endpoint */}
+        {/*
+        https://formspree.io
+        create Formspree account
+        copy & paste your endpoint
+        done
+        */}
+
+        <form
+        className="contact-form"
+        action="https://formspree.io/f/your_endpoint"
+        method="POST"
+        >
 
           <input
             type="text"
+            name="name"
             placeholder="Full Name"
           />
 
           <input
             type="email"
+            name="email"
+
             placeholder="Email Address"
           />
 
           <input
             type="text"
+            name="service"
             placeholder="Service Needed"
           />
 
           <textarea
             rows="6"
+            name="message"
             placeholder="Tell us about your project..."
           ></textarea>
 
