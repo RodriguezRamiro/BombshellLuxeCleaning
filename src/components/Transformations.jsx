@@ -1,6 +1,7 @@
 /* //BomshellLuxeCleaning/src/components/Transformations.jsx */
 
 import '../styles/transformations.css'
+import Reveal from './Reveal'
 
 import before1 from '../assets/before1.jpg'
 import after1 from '../assets/after1.jpg'
@@ -38,6 +39,7 @@ function Transformations() {
       className="transformations-section"
       id="transformations"
     >
+      <Reveal>
 
       <div className="section-heading">
 
@@ -95,6 +97,7 @@ function Transformations() {
         ))}
 
       </div>
+    </Reveal>
 
     </section>
 

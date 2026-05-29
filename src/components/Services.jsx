@@ -1,7 +1,7 @@
 /* //BomshellLuxeCleaning/src/components/Services.jsx */
 
 import '../styles/services.css'
-
+import Reveal from './Reveal'
 import {
   Sparkles,
   Home,
@@ -66,6 +66,7 @@ function Services() {
       id="services"
     >
 
+    <Reveal>
       <div className="section-heading">
 
         <p>
@@ -104,6 +105,7 @@ function Services() {
         ))}
 
       </div>
+    </Reveal>
 
     </section>
 

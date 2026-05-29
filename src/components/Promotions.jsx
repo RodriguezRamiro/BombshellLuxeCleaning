@@ -1,6 +1,7 @@
 /* //BomshellLuxeCleaning/src/components/Promotions.jsx */
 
 import '../styles/promotions.css'
+import Reveal from './Reveal'
 
 import promo1 from '../assets/promo1.jpg'
 import promo2 from '../assets/promo2.jpg'
@@ -39,6 +40,7 @@ function Promotions() {
       className="promotions-section"
       id="promotions"
     >
+      <Reveal>
 
       <div className="section-heading">
 
@@ -93,6 +95,7 @@ function Promotions() {
         ))}
 
       </div>
+      </Reveal>
 
     </section>
 

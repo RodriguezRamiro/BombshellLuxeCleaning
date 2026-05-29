@@ -1,6 +1,7 @@
 /* bizzTemplates/BomshellLuxeCleaning/src/components/Testimonials.jsx */
 
 import '../styles/testimonials.css'
+import Reveal from './Reveal'
 
 import { Star } from 'lucide-react'
 
@@ -31,6 +32,8 @@ function Testimonials() {
   return (
 
     <section className="testimonials-section">
+
+      <Reveal>
 
       <div className="section-heading">
 
@@ -96,6 +99,7 @@ function Testimonials() {
         ))}
 
       </div>
+      </Reveal>
 
     </section>
 

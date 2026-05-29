@@ -1,6 +1,7 @@
 /* /BomshellLuxeCleaning/src/components/Contact.jsx */
 
 import '../styles/contact.css'
+import Reveal from './Reveal'
 
 import {
   Phone,
@@ -16,6 +17,7 @@ function Contact() {
       className="contact-section"
       id="contact"
     >
+      <Reveal>
 
       <div className="contact-container">
 
@@ -104,6 +106,7 @@ function Contact() {
         </form>
 
       </div>
+      </Reveal>
 
     </section>
 
