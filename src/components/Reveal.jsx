@@ -1,0 +1,63 @@
+/* //BomshellLuxeCleaning/src/components/Reveal.jsx */
+
+
+import {
+    useEffect,
+    useRef,
+    useState
+  } from 'react'
+
+  function Reveal({ children }) {
+
+    const ref = useRef()
+
+    const [visible, setVisible] =
+      useState(false)
+
+    useEffect(() => {
+
+      const observer =
+        new IntersectionObserver(
+
+          ([entry]) => {
+
+            if (entry.isIntersecting) {
+              setVisible(true)
+            }
+
+          },
+
+          {
+            threshold:0.12
+          }
+
+        )
+
+      if(ref.current){
+        observer.observe(ref.current)
+      }
+
+      return () => observer.disconnect()
+
+    }, [])
+
+    return (
+
+      <div
+        ref={ref}
+        className={
+          visible
+            ? 'reveal active'
+            : 'reveal'
+        }
+      >
+
+        {children}
+
+      </div>
+
+    )
+
+  }
+
+  export default Reveal
