@@ -47,6 +47,7 @@ button{
 section{
   padding:6rem 8%;
   position:relative;
+  scroll-margin-top:120px;
 }
 
 img{
