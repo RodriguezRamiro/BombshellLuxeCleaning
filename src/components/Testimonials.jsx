@@ -4,6 +4,7 @@ import '../styles/testimonials.css'
 import Reveal from './Reveal'
 
 import { Star } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const testimonials = [
 
@@ -70,9 +71,29 @@ function Testimonials() {
 
         {testimonials.map((item, index) => (
 
-          <div
+          <motion.div
             className="testimonial-card"
             key={index}
+
+            initial={{
+              opacity:0,
+              y:30
+            }}
+
+            whileInView={{
+              opacity:1,
+              y:0
+            }}
+
+            viewport={{
+              once:true,
+              amount:0.15
+            }}
+
+            transition={{
+              duration:0.5,
+              delay:index * 0.08
+            }}
           >
 
             <div className="stars">
@@ -94,7 +115,7 @@ function Testimonials() {
               {item.name}
             </h4>
 
-          </div>
+          </motion.div>
 
         ))}
 

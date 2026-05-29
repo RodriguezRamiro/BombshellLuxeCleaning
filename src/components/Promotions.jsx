@@ -2,6 +2,7 @@
 
 import '../styles/promotions.css'
 import Reveal from './Reveal'
+import { motion } from 'framer-motion'
 
 import promo1 from '../assets/promo1.jpg'
 import promo2 from '../assets/promo2.jpg'
@@ -58,9 +59,29 @@ function Promotions() {
 
         {promotions.map((promo, index) => (
 
-          <div
+          <motion.div
             className="promo-card"
             key={index}
+
+            initial={{
+              opacity:0,
+              y:30
+            }}
+
+            whileInView={{
+              opacity:1,
+              y:0
+            }}
+
+            viewport={{
+              once:true,
+              amount:0.15
+            }}
+
+            transition={{
+              duration:0.5,
+              delay:index * 0.07
+            }}
           >
 
             <div className="promo-image">
@@ -90,7 +111,7 @@ function Promotions() {
 
             </div>
 
-          </div>
+          </motion.div>
 
         ))}
 

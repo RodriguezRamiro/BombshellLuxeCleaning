@@ -52,6 +52,12 @@ button{
     opacity 0.25s ease;
 }
 
+button:active{
+
+  transform:scale(0.98);
+
+}
+
 section{
   padding:6rem 8%;
   position:relative;
