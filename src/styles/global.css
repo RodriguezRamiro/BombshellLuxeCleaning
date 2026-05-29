@@ -26,6 +26,10 @@ body{
   color:var(--text-primary);
   font-family:'Inter', sans-serif;
   overflow-x:hidden;
+
+  -webkit-font-smoothing:antialiased;
+
+  text-rendering:optimizeLegibility;
 }
 
 h1,h2,h3,h4{
@@ -42,6 +46,10 @@ button{
   border:none;
   cursor:pointer;
   font-family:'Inter', sans-serif;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
 }
 
 section{
