@@ -1,5 +1,6 @@
 /* 05_2026 /BomshellLuxeCleaning/src/App.jsx */
 
+import AmbientGlow from './components/AmbientGlow'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -17,7 +18,8 @@ function App() {
   return (
 
     <>
-
+      <AmbientGlow />
+      
       <Navbar />
       <Hero />
       <Services />
