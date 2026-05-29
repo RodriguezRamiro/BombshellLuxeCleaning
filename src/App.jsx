@@ -10,16 +10,14 @@ import Contact from './components/Contact';
 import Footer from './components/Footer'
 
 
-{/* Missing dak light mode, haburger menu, currenty year function.
-needs responsiveness and finish polishing minor details
-|| Rough Deal Time Monday */}
+
 function App() {
 
   return (
 
     <>
       <AmbientGlow />
-      
+
       <Navbar />
       <Hero />
       <Services />

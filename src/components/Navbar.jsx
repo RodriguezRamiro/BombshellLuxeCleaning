@@ -1,9 +1,12 @@
 /* //BomshellLuxeCleaning/src/components/Navbar.jsx */
+
 import '../styles/navbar.css'
 
 import {
   Menu,
-  X
+  X,
+  Moon,
+  Sun
 } from 'lucide-react'
 
 import {
@@ -19,6 +22,13 @@ function Navbar() {
   const [scrolled, setScrolled] =
     useState(false)
 
+  const [theme, setTheme] =
+    useState(
+      localStorage.getItem('theme')
+      || 'light'
+    )
+
+  // Scroll Effect
   useEffect(() => {
 
     const handleScroll = () => {
@@ -39,6 +49,31 @@ function Navbar() {
       )
 
   }, [])
+
+  // Theme Effect
+  useEffect(() => {
+
+    document.documentElement.setAttribute(
+      'data-theme',
+      theme
+    )
+
+    localStorage.setItem(
+      'theme',
+      theme
+    )
+
+  }, [theme])
+
+  const toggleTheme = () => {
+
+    setTheme(
+      theme === 'light'
+        ? 'dark'
+        : 'light'
+    )
+
+  }
 
   return (
 
@@ -76,6 +111,19 @@ function Navbar() {
 
       <button className="nav-btn">
         Book Now
+      </button>
+
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+      >
+
+        {
+          theme === 'light'
+            ? <Moon />
+            : <Sun />
+        }
+
       </button>
 
       <button
