@@ -69,6 +69,30 @@
 
 }
 
+.nav-links a::after{
+
+  content:'';
+
+  position:absolute;
+
+  left:0;
+  bottom:-6px;
+
+  width:0%;
+  height:1px;
+
+  background:var(--gold-soft);
+
+  transition:0.3s ease;
+
+}
+
+.nav-links a:hover::after{
+
+  width:100%;
+
+}
+
 .nav-links a:hover{
 
   color:var(--gold-soft);
