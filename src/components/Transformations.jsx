@@ -3,11 +3,11 @@
 import '../styles/transformations.css'
 import Reveal from './Reveal'
 
-import before1 from '../assets/before1.jpg'
-import after1 from '../assets/after1.jpg'
+import before1 from '../assets/before1.jpeg'
+import after1 from '../assets/after1.jpeg'
 
-import before2 from '../assets/before2.jpg'
-import after2 from '../assets/after2.jpg'
+import before2 from '../assets/before2.jpeg'
+import after2 from '../assets/after2.jpeg'
 
 import before3 from '../assets/before3.jpg'
 import after3 from '../assets/after3.jpg'
