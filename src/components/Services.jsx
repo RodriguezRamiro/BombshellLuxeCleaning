@@ -58,6 +58,13 @@ const services = [
 
 ]
 
+/*
+section heading slightly too light gold lettering
+for light background mode.
+additionally it needs a way to exchange cards if services
+change or are added and removed. 
+*/
+
 function Services() {
 
   return (

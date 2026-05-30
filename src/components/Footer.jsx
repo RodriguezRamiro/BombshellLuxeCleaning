@@ -122,7 +122,7 @@ function Footer() {
         </p>
 
         <p>
-          Designed by RodriguezTech
+          Designed by RodriguezTech Studios
         </p>
 
       </div>

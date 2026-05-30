@@ -6,6 +6,16 @@ import Reveal from './Reveal'
 import { Star } from 'lucide-react'
 import { motion } from 'framer-motion'
 
+
+/*
+need to have leave review button and/or api from google reviews? limit up to
+3-5 most recents with at least 4 stars
+section heading also to light as previous components.
+stats card should be dynamic. maybe we need a way to calculate
+actual stats. 5 stars we can link to google reviwes,
+cleanings  and recurring clients needs to be calculated automatically somehow.
+*/
+
 const testimonials = [
 
   {

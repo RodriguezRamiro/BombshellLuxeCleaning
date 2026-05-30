@@ -33,6 +33,13 @@ const promotions = [
 
 ]
 
+/*
+section heaing slighttly too light on light mode gold
+lettering needs to be slightly darker to compoensate
+needs a way for client to be able to upload current and
+changing promitions. 
+*/
+
 function Promotions() {
 
   return (
