@@ -1,53 +1,152 @@
 /* //BomshellLuxeCleaning/src/styles/variables.css */
-
 :root {
 
-    /* COLORS */
+  /* LIGHT MODE */
 
-    --bg-primary: #080808;
-    --bg-secondary: #111111;
-    --bg-card: rgba(255,255,255,0.05);
+  --bg-primary: #fffaf2;
+  --bg-secondary: #ffffff;
 
-    --gold-primary: #d4af37;
-    --gold-soft: #f1d48b;
-    --champagne: #f6e7c1;
+  --bg-card:
+    rgba(255,255,255,0.72);
 
-    --lavender: #c8a2ff;
+  --soft-white: #fffaf2;
 
-    --text-primary: #ffffff;
-    --text-secondary: #d6d6d6;
-    --text-muted: #9d9d9d;
+  /* BRAND COLORS */
 
-    /* GRADIENTS */
+  --bright-amber: #ffcc00;
+  --mustard: #ffde5c;
+  --light-gold: #ffeb99;
 
-    --gradient-gold:
-      linear-gradient(
-        135deg,
-        #d4af37,
-        #f6e7c1
-      );
+  --bright-lavender: #a486d5;
+  --indigo-velvet: #54318c;
 
-    --gradient-dark:
-      linear-gradient(
-        180deg,
-        #080808,
-        #111111
-      );
+  /* SEMANTIC COLORS */
 
-    /* SHADOWS */
+  --gold-primary:
+    var(--bright-amber);
 
-    --shadow-gold:
-      0 0 25px rgba(212,175,55,0.25);
+  --gold-soft:
+    var(--light-gold);
 
-    --shadow-soft:
-      0 10px 40px rgba(0,0,0,0.4);
+  --lavender:
+    var(--bright-lavender);
 
-    /* GLASS */
+  --champagne:
+    #e7d3aa;
 
-    --glass-bg:
-      rgba(255,255,255,0.05);
+  /* TEXT */
 
-    --glass-border:
-      rgba(255,255,255,0.1);
+  --text-primary: #181818;
 
-  }
+  --text-secondary: #5e5e5e;
+
+  --text-muted: #8c8c8c;
+
+  /* GRADIENTS */
+
+  --gradient-gold:
+    linear-gradient(
+      135deg,
+      var(--bright-amber),
+      var(--light-gold)
+    );
+
+  --gradient-dark:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f6f2ea
+    );
+
+  /* SHADOWS */
+
+  --shadow-gold:
+    0 0 30px rgba(255,204,0,0.18);
+
+  --shadow-soft:
+    0 10px 40px rgba(0,0,0,0.08);
+
+  /* GLASS */
+
+  --glass-bg:
+    rgba(255,255,255,0.65);
+
+  --glass-border:
+    rgba(0,0,0,0.06);
+
+}
+
+[data-theme='dark'] {
+
+  --bg-primary: #080808;
+  --bg-secondary: #111111;
+
+  --bg-card:
+    rgba(255,255,255,0.05);
+
+  --soft-white: #fffaf2;
+
+  /* BRAND COLORS */
+
+  --bright-amber: #ffcc00;
+  --mustard: #ffde5c;
+  --light-gold: #ffeb99;
+
+  --bright-lavender: #a486d5;
+  --indigo-velvet: #54318c;
+
+  /* SEMANTIC COLORS */
+
+  --gold-primary:
+    var(--bright-amber);
+
+  --gold-soft:
+    var(--light-gold);
+
+  --lavender:
+    var(--bright-lavender);
+
+  --champagne:
+    #f6e7c1;
+
+  /* TEXT */
+
+  --text-primary: #ffffff;
+
+  --text-secondary: #d6d6d6;
+
+  --text-muted: #9d9d9d;
+
+  /* GRADIENTS */
+
+  --gradient-gold:
+    linear-gradient(
+      135deg,
+      var(--bright-amber),
+      var(--light-gold)
+    );
+
+  --gradient-dark:
+    linear-gradient(
+      180deg,
+      #080808,
+      #111111
+    );
+
+  /* SHADOWS */
+
+  --shadow-gold:
+    0 0 25px rgba(255,204,0,0.22);
+
+  --shadow-soft:
+    0 10px 40px rgba(0,0,0,0.4);
+
+  /* GLASS */
+
+  --glass-bg:
+    rgba(255,255,255,0.05);
+
+  --glass-border:
+    rgba(255,255,255,0.1);
+
+}

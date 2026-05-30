@@ -2,14 +2,14 @@
 
 .testimonials-section{
 
-    background:
-      linear-gradient(
-        to bottom,
-        #111111,
-        #080808
-      );
+  background:
+    linear-gradient(
+      to bottom,
+      var(--bg-secondary),
+      var(--bg-primary)
+    );
 
-  }
+}
 
   .trust-stats{
 
@@ -33,10 +33,10 @@
     text-align:center;
 
     background:
-      rgba(255,255,255,0.04);
+      var(--glass-bg);
 
     border:
-      1px solid rgba(255,255,255,0.08);
+      1px solid var(--glass-border);
 
     backdrop-filter:blur(12px);
 
@@ -49,10 +49,10 @@
     transform:translateY(-8px);
 
     border:
-      1px solid rgba(212,175,55,0.3);
+      1px solid rgba(255,204,0,0.25);
 
     box-shadow:
-      0 0 30px rgba(212,175,55,0.12);
+      var(--shadow-gold);
 
   }
 
@@ -93,11 +93,10 @@
     border-radius:30px;
 
     background:
-      rgba(255,255,255,0.04);
+      var(--glass-bg);
 
     border:
-      1px solid rgba(255,255,255,0.08);
-
+      1px solid var(--glass-border);
     backdrop-filter:blur(14px);
 
     transition:0.4s ease;
@@ -119,7 +118,7 @@
     background:
       linear-gradient(
         135deg,
-        rgba(212,175,55,0.08),
+        rgba(255,204,0,0.08),
         transparent
       );
 
@@ -134,7 +133,10 @@
     transform:translateY(-10px);
 
     border:
-      1px solid rgba(212,175,55,0.3);
+      1px solid rgba(255,204,0,0.25);
+
+    box-shadow:
+      var(--shadow-gold);
 
   }
 

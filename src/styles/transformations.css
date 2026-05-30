@@ -2,14 +2,14 @@
 
 .transformations-section{
 
-    background:
-      linear-gradient(
-        to bottom,
-        #0f0f0f,
-        #080808
-      );
+  background:
+    linear-gradient(
+      to bottom,
+      var(--bg-secondary),
+      var(--bg-primary)
+    );
 
-  }
+}
 
   .transformations-grid{
 
@@ -30,12 +30,24 @@
     overflow:hidden;
 
     background:
-      rgba(255,255,255,0.03);
+      var(--glass-bg);
 
     border:
-      1px solid rgba(255,255,255,0.06);
+      1px solid var(--glass-border);
 
     backdrop-filter:blur(12px);
+
+    box-shadow:var(--shadow-soft);
+
+    transition:0.35s ease;
+
+  }
+
+  .transformation-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-gold);
 
   }
 
@@ -101,9 +113,9 @@
   .before{
 
     background:
-      rgba(0,0,0,0.6);
+      rgba(0,0,0,0.55);
 
-    color:#fff;
+    color:var(--soft-white);
 
   }
 

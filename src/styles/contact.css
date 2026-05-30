@@ -5,10 +5,10 @@
     background:
       radial-gradient(
         circle at top,
-        rgba(212,175,55,0.08),
+        rgba(255,204,0,0.08)
         transparent 40%
       ),
-      #080808;
+      var(--bg-primary);
 
   }
 
@@ -46,6 +46,8 @@
     margin-bottom:1rem;
 
     font-size:0.9rem;
+
+    font-weight:600;
 
   }
 
@@ -94,10 +96,10 @@
     border-radius:32px;
 
     background:
-      rgba(255,255,255,0.04);
+      var(--glass-bg);
 
     border:
-      1px solid rgba(255,255,255,0.08);
+      1px solid var(--glass-border);
 
     backdrop-filter:blur(18px);
 
@@ -117,18 +119,38 @@
     border-radius:18px;
 
     border:
-      1px solid rgba(255,255,255,0.08);
+      1px solid var(--glass-border);
 
     background:
-      rgba(255,255,255,0.03);
+      color-mix(
+        in srgb,
+        var(--bg-secondary) 92%,
+        transparent
+      );
 
-    color:white;
+    color:var(--text-primary);
 
     outline:none;
 
     font-family:'Inter', sans-serif;
 
+    transition:
+  border 0.3s ease,
+  box-shadow 0.3s ease,
+  background 0.3s ease;
+
   }
+
+  .contact-form input:focus,
+.contact-form textarea:focus{
+
+  border:
+    1px solid rgba(255,204,0,0.22);
+
+  box-shadow:
+    0 0 18px rgba(255,204,0,0.08);
+
+}
 
   .contact-form input::placeholder,
   .contact-form textarea::placeholder{
@@ -150,6 +172,13 @@
     padding:1rem;
 
     border-radius:999px;
+
+    border:none;
+
+    cursor:pointer;
+
+    box-shadow:
+      0 10px 24px rgba(255,204,0,0.12);
 
     background:var(--gradient-gold);
 

@@ -2,14 +2,14 @@
 
 .promotions-section{
 
-    background:
-      linear-gradient(
-        to bottom,
-        #080808,
-        #111111
-      );
+  background:
+    linear-gradient(
+      to bottom,
+      var(--bg-primary),
+      var(--bg-secondary)
+    );
 
-  }
+}
 
   .promotions-grid{
 
@@ -31,10 +31,10 @@
     border-radius:30px;
 
     background:
-      rgba(255,255,255,0.04);
+      var(--glass-bg);
 
     border:
-      1px solid rgba(255,255,255,0.08);
+      1px solid var(--glass-border);
 
     backdrop-filter:blur(14px);
 
@@ -49,11 +49,11 @@
     transform:
       translateY(-10px);
 
-    border:
-      1px solid rgba(212,175,55,0.3);
+      border:
+        1px solid rgba(255,204,0,0.25);
 
-    box-shadow:
-      0 0 35px rgba(212,175,55,0.15);
+      box-shadow:
+        var(--shadow-gold);
 
   }
 
@@ -92,7 +92,7 @@
     background:
       linear-gradient(
         to top,
-        rgba(0,0,0,0.75),
+        rgba(8,8,8,0.68)
         transparent
       );
 
@@ -107,6 +107,8 @@
   .promo-content h3{
 
     margin-bottom:1rem;
+
+    color:var(--text-primary);
 
     font-size:1.7rem;
 
@@ -128,7 +130,14 @@
 
     border-radius:999px;
 
+    border:none;
+
+    cursor:pointer;
+
     background:var(--gradient-gold);
+
+    box-shadow:
+      0 6px 18px rgba(255,204,0,0.15);
 
     color:#000;
 

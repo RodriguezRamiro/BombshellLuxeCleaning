@@ -1,3 +1,5 @@
+/* //BomshellLuxeCleaning/src/styles/global.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @import './variables.css';
@@ -26,15 +28,22 @@ body{
   color:var(--text-primary);
   font-family:'Inter', sans-serif;
   overflow-x:hidden;
+  min-height:100vh;
 
   -webkit-font-smoothing:antialiased;
 
   text-rendering:optimizeLegibility;
+
+  transition:
+  background 0.35s ease,
+  color 0.35s ease;
 }
 
 h1,h2,h3,h4{
   font-family:'Playfair Display', serif;
   letter-spacing:1px;
+  font-weight:700;
+
 }
 
 a{
@@ -62,9 +71,29 @@ section{
   padding:6rem 8%;
   position:relative;
   scroll-margin-top:120px;
+  isolation:isolate;
 }
 
 img{
   max-width:100%;
   display:block;
+}
+
+::selection{
+
+  background:
+    rgba(255,204,0,0.25);
+
+  color:var(--text-primary);
+
+}
+
+@media(max-width:768px){
+
+  section{
+
+    padding:5rem 1.5rem;
+
+  }
+
 }
