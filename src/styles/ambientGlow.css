@@ -10,6 +10,8 @@
 
     pointer-events:none;
 
+    mix-blend-mode:screen;
+
     z-index:0;
 
   }
@@ -27,6 +29,10 @@
     animation:
       floatGlow 14s ease-in-out infinite;
 
+    will-change:transform;
+
+    transform:translateZ(0);
+
   }
 
   .glow-one{
@@ -35,7 +41,7 @@
     height:350px;
 
     background:
-      rgba(212,175,55,0.55);
+      rgba(255,204,0,0.38);
 
     top:10%;
     left:-5%;
@@ -48,7 +54,7 @@
     height:450px;
 
     background:
-      rgba(200,162,255,0.25);
+      rgba(164,134,213,0.18);
 
     top:50%;
     right:-10%;
@@ -63,7 +69,7 @@
     height:300px;
 
     background:
-      rgba(255,255,255,0.12);
+    rgba(255,250,242,0.08);
 
     bottom:0%;
     left:40%;
@@ -85,8 +91,8 @@
     50%{
 
       transform:
-        translateY(-20px)
-        translateX(10px);
+        translateY(-14px)
+        translateX(8px);
 
     }
 
