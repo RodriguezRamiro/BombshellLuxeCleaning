@@ -38,12 +38,44 @@ function Services() {
 
           <motion.div
             className="service-card"
-            key={service.title}
+            key={service.id}
+
+            initial={{
+              opacity:0,
+              y:30
+            }}
+
+            whileInView={{
+              opacity:1,
+              y:0
+            }}
+
+            viewport={{
+              once:true,
+              amount:0.15
+            }}
+
+            transition={{
+              duration:0.5,
+              delay:index * 0.08
+            }}
+
+            whileHover={{
+              y:-8
+            }}
           >
 
             <div className="service-icon">
               <Icon />
             </div>
+
+            <h3>
+              {service.title}
+            </h3>
+
+            <p>
+              {service.description}
+            </p>
 
           </motion.div>
 
