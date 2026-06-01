@@ -94,9 +94,13 @@ function Navbar() {
       }
     >
 
-      <div className="logo">
+      <a
+      href="#"
+      className="logo"
+      >
         Bombshell Luxe
-      </div>
+
+        </a>
 
       <div className="nav-links">
 
