@@ -36,7 +36,7 @@ function Transformations() {
 
           <div
             className="transformation-card"
-            key={index.id}
+            key={item.id}
           >
 
             <div className="image-wrapper">
