@@ -14,10 +14,6 @@ import {
   useState
 } from 'react'
 
-/*
-Navbar booknow button needs to be hooked up
-navbar logo should be clickable for index
-*/
 
 function Navbar() {
 
