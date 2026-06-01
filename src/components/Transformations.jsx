@@ -33,8 +33,7 @@ const transformations = [
 
 
 /*
-section heading lettering slightly too light gold lettering
-on light mode.
+
 user needs a way to submit new before and afters as needed.
 current method ramirorodriguezalvarez@RAMIROs-MacBook-Pro bomshellLuxeCleaning % cd src
 ramirorodriguezalvarez@RAMIROs-MacBook-Pro src % ls
@@ -45,7 +44,10 @@ ramirorodriguezalvarez@RAMIROs-MacBook-Pro assets % ls
 after1.jpeg     before1.jpeg    promo1.jpg
 after2.jpeg     before2.jpeg    promo2.jpg
 after3.jpg      before3.jpg     promo3.jpg
-ramirorodriguezalvarez@RAMIROs-MacBook-Pro assets % 
+ramirorodriguezalvarez@RAMIROs-MacBook-Pro assets %
+images need to pop up to show full image both on mobile and desktop maybe like a zoom in pop up
+maybe modal? not sure how to do that.
+
 */
 function Transformations() {
 
