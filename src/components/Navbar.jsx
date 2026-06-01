@@ -122,9 +122,12 @@ function Navbar() {
 
       </div>
 
-      <button className="nav-btn">
+      <a
+      href="#contact"
+      className="nav-btn"
+      >
         Book Now
-      </button>
+      </a>
 
       <button
         className="theme-toggle"
