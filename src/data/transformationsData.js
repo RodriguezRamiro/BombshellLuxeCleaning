@@ -13,20 +13,44 @@ export const transformations = [
 
   {
     id:'kitchen-refresh',
-    before:before1,
-    after:after1
+    title:'Kitchen Refresh',
+    before:{
+        image:before1,
+        alt:'Kitchen before refresh',
+    },
+
+    after:{
+        image:after1,
+        alt:'Kitchen after refresh',
   },
+},
 
   {
     id:'living-room-detail',
-    before:before2,
-    after:after2
+    title:"Livingroom Detailing",
+    before:{
+        image:before2,
+        alt: 'Livingroom before detailing'
+    },
+
+    after:{
+        image:after2,
+        alt:'Livingroom after detailing'
   },
+},
 
   {
     id:'bathroom-restoration',
-    before:before3,
-    after:after3
+    title:'Bathroom Restoration',
+    before:{
+        image:before3,
+        alt:'Bathroom before cleaning'
+      },
+
+      after:{
+        image:after3,
+        alt:'Bathroom after cleaning'
+      }
   }
 
 ]

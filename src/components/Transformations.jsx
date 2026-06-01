@@ -1,11 +1,14 @@
 /* //BomshellLuxeCleaning/src/components/Transformations.jsx */
 
+import { useState } from 'react'
 import '../styles/transformations.css'
 import Reveal from './Reveal'
 import { transformations } from '../data/transformationsData'
 
 
 function Transformations() {
+
+  const [selectedImage, setSelectedImage] = useState(null)
 
   return (
 
@@ -33,16 +36,16 @@ function Transformations() {
 
           <div
             className="transformation-card"
-            key={index}
+            key={index.id}
           >
 
             <div className="image-wrapper">
 
               <div className="image-box">
 
-                <img
-                  src={item.before}
-                  alt="Before Cleaning"
+                <img onClick={() => setSelectedImage(item.before.image)}
+                  src={item.before.image}
+                  alt={item.before.alt}
                 />
 
                 <span className="label before">
@@ -54,9 +57,10 @@ function Transformations() {
               <div className="image-box">
 
                 <img
-                  src={item.after}
-                  alt="After Cleaning"
-                />
+                    onClick={() => setSelectedImage(item.after.image)}
+                    src={item.after.image}
+                    alt={item.after.alt}
+                  />
 
                 <span className="label after">
                   After
@@ -72,6 +76,36 @@ function Transformations() {
 
       </div>
     </Reveal>
+
+    {selectedImage && (
+
+<div
+  className="image-modal"
+  onClick={() => setSelectedImage(null)}
+>
+
+  <div
+    className="modal-content"
+    onClick={(e) => e.stopPropagation()}
+  >
+
+    <button
+      className="close-modal"
+      onClick={() => setSelectedImage(null)}
+    >
+      ×
+    </button>
+
+    <img
+      src={selectedImage}
+      alt="Expanded transformation"
+    />
+
+  </div>
+
+</div>
+
+)}
 
     </section>
 
