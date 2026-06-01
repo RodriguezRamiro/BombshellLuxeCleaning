@@ -5,11 +5,7 @@ import Particles from './Particles'
 import { motion } from 'framer-motion'
 
 
-/*
-hero subttiel slightly to light gold on the white background
-during light mode
 
-*/
 function Hero() {
 
   return (
