@@ -27,11 +27,15 @@ function Navbar() {
   const [scrolled, setScrolled] =
     useState(false)
 
-  const [theme, setTheme] =
-    useState(
-      localStorage.getItem('theme')
-      || 'light'
-    )
+    const [theme, setTheme] =
+    useState(() => {
+
+      return (
+        localStorage.getItem('theme')
+        || 'light'
+      )
+
+    })
 
   // Scroll Effect
   useEffect(() => {
