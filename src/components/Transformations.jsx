@@ -32,7 +32,7 @@ function Transformations() {
 
       <div className="transformations-grid">
 
-        {transformations.map((item, index) => (
+        {transformations.map((item) => (
 
           <div
             className="transformation-card"
@@ -43,7 +43,8 @@ function Transformations() {
 
               <div className="image-box">
 
-                <img onClick={() => setSelectedImage(item.before.image)}
+                <img
+                  onClick={() => setSelectedImage(item.before.image)}
                   src={item.before.image}
                   alt={item.before.alt}
                 />
