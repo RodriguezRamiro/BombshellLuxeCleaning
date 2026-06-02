@@ -3,44 +3,19 @@
 import '../styles/promotions.css'
 import Reveal from './Reveal'
 import { motion } from 'framer-motion'
-
-import promo1 from '../assets/promo1.jpg'
-import promo2 from '../assets/promo2.jpg'
-import promo3 from '../assets/promo3.jpg'
-
-const promotions = [
-
-  {
-    image: promo1,
-    title: 'Summer Cleaning Special',
-    description:
-      'Book now and receive 15% OFF luxury cleaning services for a limited time.'
-  },
-
-  {
-    image: promo2,
-    title: 'Move-In / Move-Out Refresh',
-    description:
-      'Detailed transformation cleanings designed for seamless home transitions.'
-  },
-
-  {
-    image: promo3,
-    title: 'Airbnb Turnover Excellence',
-    description:
-      'Fast, elegant, guest-ready cleaning experiences for short-term rentals.'
-  }
-
-]
+import { promotions } from '../data/promotionsData'
+import { useState } from 'react'
 
 /*
-section heaing slighttly too light on light mode gold
-lettering needs to be slightly darker to compoensate
+same issue as transformation pictures needs a way to pop up the
+promotion poster/banner. add modal?
 needs a way for client to be able to upload current and
-changing promitions. 
+changing promitions.
 */
 
 function Promotions() {
+
+  const [selectedPromo, setSelectedPromo] = useState(null)
 
   return (
 
@@ -68,7 +43,7 @@ function Promotions() {
 
           <motion.div
             className="promo-card"
-            key={index}
+            key={promo.id}
 
             initial={{
               opacity:0,
@@ -94,8 +69,10 @@ function Promotions() {
             <div className="promo-image">
 
               <img
-                src={promo.image}
-                alt={promo.title}
+                onClick={() => setSelectedPromo(promo.image.src)}
+                src={promo.image.src}
+                alt={promo.image.alt}
+
               />
 
               <div className="promo-overlay"></div>
@@ -124,6 +101,34 @@ function Promotions() {
 
       </div>
       </Reveal>
+
+      {selectedPromo && (
+
+        <div
+    className="promo-modal"
+    onClick={() => setSelectedPromo(null)}
+  >
+    <div
+    className="promo-modal"
+    onClick={() => setSelectedPromo(null)}
+  >
+    <button
+        className="close-promo-modal"
+        onClick={() => setSelectedPromo(null)}
+      >
+      ×
+    </button>
+
+    <img
+      src={selectedPromo}
+      alt="Expanded promotion"
+    />
+
+  </div>
+
+</div>
+
+)}
 
     </section>
 
