@@ -7,8 +7,7 @@ import { promotions } from '../data/promotionsData'
 import { useState } from 'react'
 
 /*
-same issue as transformation pictures needs a way to pop up the
-promotion poster/banner. add modal?
+
 needs a way for client to be able to upload current and
 changing promitions.
 */
@@ -20,8 +19,8 @@ function Promotions() {
   return (
 
     <section
-      className="promotions-section"
-      id="promotions"
+    className="promotions-section"
+    id="promotions"
     >
       <Reveal>
 
@@ -41,29 +40,30 @@ function Promotions() {
 
         {promotions.map((promo, index) => (
 
+          
           <motion.div
-            className="promo-card"
-            key={promo.id}
+          className="promo-card"
+          key={promo.id}
 
-            initial={{
-              opacity:0,
-              y:30
-            }}
+          initial={{
+            opacity:0,
+            y:30
+          }}
 
-            whileInView={{
-              opacity:1,
-              y:0
-            }}
+          whileInView={{
+            opacity:1,
+            y:0
+          }}
 
-            viewport={{
-              once:true,
-              amount:0.15
-            }}
+          viewport={{
+            once:true,
+            amount:0.15
+          }}
 
-            transition={{
-              duration:0.5,
-              delay:index * 0.07
-            }}
+          transition={{
+            duration:0.5,
+            delay:index * 0.07
+          }}
           >
 
             <div className="promo-image">
@@ -73,7 +73,7 @@ function Promotions() {
                 src={promo.image.src}
                 alt={promo.image.alt}
 
-              />
+                />
 
               <div className="promo-overlay"></div>
 
@@ -105,30 +105,32 @@ function Promotions() {
       {selectedPromo && (
 
         <div
-    className="promo-modal"
-    onClick={() => setSelectedPromo(null)}
-  >
-    <div
-    className="promo-modal"
-    onClick={() => setSelectedPromo(null)}
-  >
-    <button
-        className="close-promo-modal"
-        onClick={() => setSelectedPromo(null)}
-      >
-      ×
-    </button>
+          className="promo-modal"
+          onClick={() => setSelectedPromo(null)}
+        >
 
-    <img
-      src={selectedPromo}
-      alt="Expanded promotion"
-    />
+          <div
+            className="promo-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
 
-  </div>
+            <button
+              className="close-promo-modal"
+              onClick={() => setSelectedPromo(null)}
+            >
+              ×
+            </button>
 
-</div>
+            <img
+              src={selectedPromo}
+              alt="Expanded promotion"
+            />
 
-)}
+          </div>
+
+        </div>
+
+        )}
 
     </section>
 
