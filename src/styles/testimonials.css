@@ -183,4 +183,79 @@
 
     color:var(--champagne);
 
-  }
+  }/* Reviews Actions */
+
+.reviews-actions{
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:1rem;
+
+  flex-wrap:wrap;
+
+  margin-top:4rem;
+
+}
+
+.reviews-btn{
+
+  padding:1rem 2rem;
+
+  border-radius:999px;
+
+  border:none;
+
+  cursor:pointer;
+
+  font-size:1rem;
+  font-weight:700;
+
+  transition:0.3s ease;
+
+}
+
+/* Primary Gold Button */
+
+.reviews-btn:first-child{
+
+  background:var(--gradient-gold);
+
+  color:#000;
+
+  box-shadow:
+    0 10px 24px rgba(255,204,0,0.14);
+
+}
+
+.reviews-btn:first-child:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:var(--shadow-gold);
+
+}
+
+/* Secondary Glass Button */
+
+.reviews-btn:last-child{
+
+  background:transparent;
+
+  color:var(--text-primary);
+
+  border:
+    1px solid var(--glass-border);
+
+  backdrop-filter:blur(10px);
+
+}
+
+.reviews-btn:last-child:hover{
+
+  background:var(--glass-bg);
+
+  transform:translateY(-3px);
+
+}
