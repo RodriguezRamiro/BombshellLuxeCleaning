@@ -1,17 +1,69 @@
-# React + Vite
+For Later Reference.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Your React/Vite business template = the frontend website
+Sanity.io = the content management backend/dashboard
+Your client logs into Sanity Studio and edits content
+The website automatically pulls updated content from Sanity
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+That means:
 
-## React Compiler
+they can change hero text
+update services
+add testimonials
+swap images
+edit pricing
+publish blog posts
+etc.
+without touching code.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+invite my clients as editors so they have access to their website.
+invite clients as editors
 
-## Expanding the ESLint configuration
+How it works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# BombshellLuxeCleaning
+YOU:
+
+create all Sanity projects
+own the organization
+deploy the Studio
+manage billing
+invite clients as editors
+
+CLIENT:
+
+gets invited by email
+logs into THEIR content dashboard
+edits only their website
+
+best starting setup
+Easier management
+
+You control:
+
+deployments
+schemas
+updates
+backups
+permissions
+troubleshooting
+Easier scaling
+
+You can manage:
+
+Client A
+Client B
+Client C
+
+all from one dashboard.
+
+Better recurring revenue
+
+You can charge:
+
+hosting
+maintenance
+CMS management
+edits/support
+
+monthly.
