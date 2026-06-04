@@ -1,10 +1,12 @@
 /* bizzTemplates/BomshellLuxeCleaning/src/components/Testimonials.jsx */
 
-import '../styles/testimonials.css'
-import Reveal from './Reveal'
+import '../styles/testimonials.css';
+import Reveal from './Reveal';
 
-import { Star } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { Star } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { testimonials } from '../data/testimonialsData';
+import { stats } from '../data/statsData';
 
 
 /*
@@ -15,28 +17,6 @@ actual stats. 5 stars we can link to google reviwes,
 cleanings  and recurring clients needs to be calculated automatically somehow.
 would it be best to leave them statiic?
 */
-
-const testimonials = [
-
-  {
-    name: 'Sophia M.',
-    review:
-      'Absolutely incredible attention to detail. My home felt like a luxury resort after the cleaning service.',
-  },
-
-  {
-    name: 'Rachel T.',
-    review:
-      'Professional, reliable, and beautifully done. The level of care and presentation truly stands out.',
-  },
-
-  {
-    name: 'Michael R.',
-    review:
-      'Bombshell Luxe Cleaning completely transformed our Airbnb property. Guests immediately noticed the difference.',
-  }
-
-]
 
 function Testimonials() {
 
@@ -60,20 +40,22 @@ function Testimonials() {
 
       <div className="trust-stats">
 
-        <div className="stat-card">
-          <h3>250+</h3>
-          <p>Luxury Cleanings</p>
+        {stats.map((stat) => (
+
+        <div className="stat-card"
+          key={stat.id}
+          >
+
+            <h3>
+              {stat.value}
+            </h3>
+
+            <p>
+              {stat.label}
+            </p>
         </div>
 
-        <div className="stat-card">
-          <h3>98%</h3>
-          <p>Recurring Clients</p>
-        </div>
-
-        <div className="stat-card">
-          <h3>5-Star</h3>
-          <p>Client Experience</p>
-        </div>
+        ))}
 
       </div>
 
@@ -83,7 +65,7 @@ function Testimonials() {
 
           <motion.div
             className="testimonial-card"
-            key={index}
+            key={item.id}
 
             initial={{
               opacity:0,
@@ -108,11 +90,13 @@ function Testimonials() {
 
             <div className="stars">
 
-              {[...Array(5)].map((_, i) => (
+              {[...Array(item.rating)].map((_, i) => (
+
                 <Star
                   key={i}
                   fill="currentColor"
                 />
+
               ))}
 
             </div>
@@ -127,7 +111,19 @@ function Testimonials() {
 
           </motion.div>
 
-        ))}
+
+))}
+
+      </div>
+      <div className="reviews-actions">
+
+        <button className="reviews-btn">
+          Read More Reviews
+        </button>
+
+        <button className="reviews-btn">
+          Leave A Review
+        </button>
 
       </div>
       </Reveal>
