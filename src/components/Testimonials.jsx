@@ -117,13 +117,20 @@ function Testimonials() {
       </div>
       <div className="reviews-actions">
 
-        <button className="reviews-btn">
+        <a className="reviews-btn"
+        href="https://share.google/Qy3VhwQp9VTkk3ixO"
+        target="_blank"
+        rel="noreferrer">
           Read More Reviews
-        </button>
+        </a>
 
-        <button className="reviews-btn">
+        <a
+        className="reviews-btn"
+        href="https://share.google/Qy3VhwQp9VTkk3ixO"
+        target="_blank"
+        rel="noreferrer">
           Leave A Review
-        </button>
+        </a>
 
       </div>
       </Reveal>
