@@ -9,11 +9,11 @@ import { motion } from 'framer-motion'
 
 /*
 need to have leave review button and/or api from google reviews? limit up to
-3-5 most recents with at least 4 stars
-section heading also to light as previous components.
+3-5 most recents with at least 4 stars.
 stats card should be dynamic. maybe we need a way to calculate
 actual stats. 5 stars we can link to google reviwes,
 cleanings  and recurring clients needs to be calculated automatically somehow.
+would it be best to leave them statiic?
 */
 
 const testimonials = [
