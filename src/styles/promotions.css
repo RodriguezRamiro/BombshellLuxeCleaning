@@ -92,9 +92,11 @@
     background:
       linear-gradient(
         to top,
-        rgba(8,8,8,0.68)
+        rgba(8,8,8,0.68),
         transparent
       );
+
+    pointer-events:none;
 
   }
 
@@ -219,9 +221,25 @@
 
   cursor:pointer;
 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
   font-size:2rem;
+  line-height:1;
 
   background:white;
   color:black;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+
+  transition:0.25s ease;
+
+}
+
+.close-promo-modal:hover{
+
+  transform:scale(1.08);
 
 }
