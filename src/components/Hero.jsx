@@ -4,9 +4,23 @@ import '../styles/hero.css'
 import Particles from './Particles'
 import { motion } from 'framer-motion'
 
-
+import { useEffect, useState } from 'react'
+import { client } from '../sanityClient'
 
 function Hero() {
+
+  const [hero, setHero] = useState(null)
+
+  useEffect(() => {
+
+    client
+    .fetch(`*[_type == "hero"] [0]`)
+    .then((data) => setHero(data))
+    .catch(console.error)
+
+  },[])
+
+  if (!hero) return null
 
   return (
 
@@ -35,30 +49,27 @@ function Hero() {
   >
 
         <p className="hero-subtitle">
-          Tampa Bay Luxury Cleaning Services
+          {hero.subheading}
         </p>
 
         <h1>
-          Where Luxury Meets Spotless Perfection
+          {hero.heading}
         </h1>
 
         <p className="hero-description">
 
-          Premium residential, Airbnb,
-          move-in, and deep cleaning services
-          designed for clients who expect elegance,
-          detail, and exceptional care.
+        {hero.description}
 
         </p>
 
         <div className="hero-buttons">
 
           <button className="primary-btn">
-            Book Your Cleaning
+          {hero.primaryButton}
           </button>
 
           <button className="secondary-btn">
-            View Transformations
+          {hero.secondaryButton}
           </button>
 
         </div>
@@ -69,6 +80,6 @@ function Hero() {
 
   )
 
-}
+
 
 export default Hero
