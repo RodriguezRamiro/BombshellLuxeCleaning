@@ -1,7 +1,7 @@
 import {heroType} from './hero'
 import { servicesType } from './services'
 import { testimonialsSectionType } from './testimonialsSection'
-import { testimonialType } from './testimonial'
+import { testimonialType } from './testimonials'
 
 export const schemaTypes = [
     heroType,
