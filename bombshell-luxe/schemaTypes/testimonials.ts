@@ -2,63 +2,32 @@
 
 import { defineField, defineType } from 'sanity'
 
-export const testimonialsSectionType = defineType({
-  name: 'testimonialsSection',
-  title: 'Testimonials Section',
+export const testimonialType = defineType({
+  name: 'testimonial',
+  title: 'Testimonial',
   type: 'document',
 
   fields: [
 
     defineField({
-      name: 'sectionSubtitle',
-      title: 'Section Subtitle',
+      name: 'name',
+      title: 'Client Name',
       type: 'string',
     }),
 
     defineField({
-      name: 'sectionTitle',
-      title: 'Section Title',
-      type: 'string',
+      name: 'review',
+      title: 'Review',
+      type: 'text',
     }),
 
     defineField({
-      name: 'googleReviewsUrl',
-      title: 'Google Reviews URL',
-      type: 'url',
-    }),
+      name: 'rating',
+      title: 'Star Rating',
+      type: 'number',
 
-    defineField({
-      name: 'leaveReviewUrl',
-      title: 'Leave Review URL',
-      type: 'url',
-    }),
-
-    defineField({
-      name: 'stats',
-      title: 'Trust Stats',
-      type: 'array',
-
-      of: [
-        {
-          type: 'object',
-
-          fields: [
-
-            defineField({
-              name: 'value',
-              title: 'Stat Value',
-              type: 'string',
-            }),
-
-            defineField({
-              name: 'label',
-              title: 'Stat Label',
-              type: 'string',
-            }),
-
-          ],
-        },
-      ],
+      validation: (Rule) =>
+        Rule.min(1).max(5),
     }),
 
   ],
