@@ -3,14 +3,33 @@
 import '../styles/promotions.css'
 import Reveal from './Reveal'
 import { motion } from 'framer-motion'
-import { promotions } from '../data/promotionsData'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { client } from '../sanityClient'
+import { urlFor } from '../urlFor'
 
 
 function Promotions() {
 
   const [selectedPromo, setSelectedPromo] = useState(null)
+  const [sectionData, setSectionData] = useState(null)
+  const [promotions, setPromotions] = useState([])
+
+  useEffect(() => {
+
+    client
+    .fetch(`*[_type == "promotionsSection"][0]`)
+    .then((data) => setSectionData(data))
+    .catch(console.error)
+
+    client
+    .fetch(`*[_type == "promotion"]`)
+    .then((data) => setPromotions(data))
+    .catch(console.error)
+
+  }, [])
+
+  if (!sectionData) return null
 
   return (
 
@@ -23,11 +42,13 @@ function Promotions() {
       <div className="section-heading">
 
         <p>
-          Featured Promotions
+          {/* Featured Promotions */}
+          {sectionData.sectionSubtitle}
         </p>
 
         <h2>
-          Luxury Offers & Campaigns
+          {/* Luxury Offers & Campaigns */}
+          {sectionData.sectionTitle}
         </h2>
 
       </div>
@@ -39,7 +60,7 @@ function Promotions() {
 
           <motion.div
           className="promo-card"
-          key={promo.id}
+          key={index}
 
           initial={{
             opacity:0,
@@ -64,11 +85,14 @@ function Promotions() {
 
             <div className="promo-image">
 
-              <img
-                onClick={() => setSelectedPromo(promo.image.src)}
-                src={promo.image.src}
-                alt={promo.image.alt}
+            <img onClick={() =>
+              setSelectedPromo(
+                urlFor(promo.image).url()
+                )
+                }
 
+                src={urlFor(promo.image).url()}
+                alt={promo.imageAlt}
                 />
 
               <div className="promo-overlay"></div>
@@ -85,9 +109,17 @@ function Promotions() {
                 {promo.description}
               </p>
 
-              <button>
-                Learn More
-              </button>
+              <a
+              href={promo.buttonLink}
+              target="_blank"
+              rel="noreferrer"
+              >
+
+                <button>
+                  {promo.buttonText}
+                </button>
+
+              </a>
 
             </div>
 
