@@ -4,6 +4,8 @@ import { testimonialsSectionType } from './testimonialsSection'
 import { testimonialType } from './testimonials'
 import { transformationsSectionType } from './transformationsSection'
 import { transformationType } from './transformation'
+import { promotionsSectionType } from './promotionsSection'
+import { promotionType } from './promotion'
 
 
 
@@ -13,5 +15,7 @@ export const schemaTypes = [
   testimonialsSectionType,
   testimonialType,
   transformationsSectionType,
-  transformationType
+  transformationType,
+  promotionsSectionType,
+  promotionType
 ]
