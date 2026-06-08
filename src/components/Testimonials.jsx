@@ -5,9 +5,9 @@ import Reveal from './Reveal';
 
 import { Star } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { testimonials } from '../data/testimonialsData';
-import { stats } from '../data/statsData';
 
+import { useEffect, useState } from 'react'
+import { client } from '../sanityClient'
 
 /*
 need to have leave review button and/or api from google reviews? limit up to
@@ -20,6 +20,24 @@ would it be best to leave them statiic?
 
 function Testimonials() {
 
+  const [sectionData, setSectionData] = useState(null)
+  const [testimonials, setTestimonials] = useState([])
+
+  useEffect(() => {
+    client
+    .fetch(`*[_type == "testimonialsSection"][0]`)
+    .then((data) => setSectionData(data))
+    .catch(console.error)
+
+    client
+    .fetch(`*[_type == "testimonial"]`)
+    .then((data) => setTestimonials(data))
+    .catch(console.error)
+
+  }, [])
+
+  if (!sectionData) return null
+
   return (
 
     <section className="testimonials-section">
@@ -29,21 +47,23 @@ function Testimonials() {
       <div className="section-heading">
 
         <p>
-          Client Experiences
+          {/* Client Experiences */}
+          {sectionData.sectionSubtitle}
         </p>
 
         <h2>
-          Trusted Across Tampa Bay
+          {/* Trusted Across Tampa Bay */}
+          {sectionData.sectionTitle}
         </h2>
 
       </div>
 
       <div className="trust-stats">
 
-        {stats.map((stat) => (
+      {sectionData.stats.map((stat, index) => (
 
         <div className="stat-card"
-          key={stat.id}
+          key={index}
           >
 
             <h3>
@@ -53,6 +73,7 @@ function Testimonials() {
             <p>
               {stat.label}
             </p>
+
         </div>
 
         ))}
@@ -65,7 +86,7 @@ function Testimonials() {
 
           <motion.div
             className="testimonial-card"
-            key={item.id}
+            key={index}
 
             initial={{
               opacity:0,
@@ -118,7 +139,7 @@ function Testimonials() {
       <div className="reviews-actions">
 
         <a className="reviews-btn"
-        href="https://share.google/Qy3VhwQp9VTkk3ixO"
+        href={sectionData.googleReviewsUrl}
         target="_blank"
         rel="noreferrer">
           Read More Reviews
@@ -126,7 +147,7 @@ function Testimonials() {
 
         <a
         className="reviews-btn"
-        href="https://share.google/Qy3VhwQp9VTkk3ixO"
+        href={sectionData.leaveReviewUrl}
         target="_blank"
         rel="noreferrer">
           Leave A Review
