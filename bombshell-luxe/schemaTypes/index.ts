@@ -1,3 +1,6 @@
 import {heroType} from './hero'
 
-export const schemaTypes = [heroType]
+export const schemaTypes = [
+    heroType,
+    servicesType
+]

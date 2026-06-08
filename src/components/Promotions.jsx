@@ -6,11 +6,7 @@ import { motion } from 'framer-motion'
 import { promotions } from '../data/promotionsData'
 import { useState } from 'react'
 
-/*
 
-needs a way for client to be able to upload current and
-changing promitions.
-*/
 
 function Promotions() {
 
@@ -40,7 +36,7 @@ function Promotions() {
 
         {promotions.map((promo, index) => (
 
-          
+
           <motion.div
           className="promo-card"
           key={promo.id}

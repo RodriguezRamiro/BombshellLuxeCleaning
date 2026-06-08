@@ -3,10 +3,21 @@
 import '../styles/services.css'
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
-import { services } from '../data/servicesData'
 
+import { useEffect, useState } from 'react'
+import { client } from '../sanityClient'
+import { urlFor } from '../urlFor'
 
 function Services() {
+   const [servicesData, setServicesData] = useState(null)
+
+   useEffect(() => {
+    client .fetch(`*[_type == "services"][0]`)
+    .then((data) => setServicesData(data))
+    .catch(console.error)
+
+  }, [])
+  if (!servicesData) return null
 
   return (
 
@@ -18,27 +29,19 @@ function Services() {
     <Reveal>
       <div className="section-heading">
 
-        <p>
-          Luxury Cleaning Solutions
-        </p>
+      <p> {servicesData.sectionSubtitle} </p>
 
-        <h2>
-          Services Designed Around Excellence
-        </h2>
+      <h2> {servicesData.sectionTitle} </h2>
 
       </div>
 
       <div className="services-grid">
 
-      {services.map((service, index) => {
-
-        const Icon = service.icon
-
-        return (
+      {servicesData.servicesList.map((service, index) => (
 
           <motion.div
             className="service-card"
-            key={service.id}
+            key={index}
 
             initial={{
               opacity:0,
@@ -66,7 +69,9 @@ function Services() {
           >
 
             <div className="service-icon">
-              <Icon />
+            <img
+            src={urlFor(service.icon).url()}
+            alt={service.title} />
             </div>
 
             <h3>
@@ -79,11 +84,10 @@ function Services() {
 
           </motion.div>
 
-        )
-
-        })}
+        ))}
 
       </div>
+      
     </Reveal>
 
     </section>
