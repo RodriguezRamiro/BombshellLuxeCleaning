@@ -3,12 +3,32 @@
 import { useState } from 'react'
 import '../styles/transformations.css'
 import Reveal from './Reveal'
-import { transformations } from '../data/transformationsData'
+
+import { client } from '../sanityClient'
+import { urlFor } from '../urlFor'
 
 
 function Transformations() {
 
   const [selectedImage, setSelectedImage] = useState(null)
+
+  const [sectionData, setSectionData] = useState(null)
+  const [transformations, setTransformations] = useState([])
+
+  useEffect(() => {
+    client
+    .fetch(`*[_type == "transformationsSection"][0]`)
+    .then((data) => setSectionData(data))
+    .catch(console.error)
+
+    client
+    .fetch(`*[_type == "transformations"]`)
+    .then((data) => setTransformations(data))
+    .catch(console.error)
+
+  }, [])
+  if (!sectionData) return null
+
 
   return (
 
@@ -21,22 +41,24 @@ function Transformations() {
       <div className="section-heading">
 
         <p>
-          Luxury-Level Results
+          {/* Luxury-Level Results */}
+          {sectionData.sectionSubtitle}
         </p>
 
         <h2>
-          See The Transformation
+          {/* See The Transformation */}
+          {sectionData.sectionTitle}
         </h2>
 
       </div>
 
       <div className="transformations-grid">
 
-        {transformations.map((item) => (
+        {transformations.map((item, index) => (
 
           <div
             className="transformation-card"
-            key={item.id}
+            key={index}
           >
 
             <div className="image-wrapper">
@@ -44,9 +66,15 @@ function Transformations() {
               <div className="image-box">
 
                 <img
-                  onClick={() => setSelectedImage(item.before.image)}
-                  src={item.before.image}
-                  alt={item.before.alt}
+                  onClick={() =>
+                    setSelectedImage(
+                      urlFor(item.beforeImage).url()
+                    )
+                  }
+
+                  src={urlFor(item.beforeImage).url()}
+                  alt={item.beforeAlt}
+
                 />
 
                 <span className="label before">
@@ -58,10 +86,15 @@ function Transformations() {
               <div className="image-box">
 
                 <img
-                    onClick={() => setSelectedImage(item.after.image)}
-                    src={item.after.image}
-                    alt={item.after.alt}
-                  />
+                onClick={() =>
+                  setSelectedImage(
+                    urlFor(item.afterImage).url()
+                    )
+                    }
+
+                    src={urlFor(item.afterImage).url()}
+                    alt={item.afterAlt}
+                    />
 
                 <span className="label after">
                   After
