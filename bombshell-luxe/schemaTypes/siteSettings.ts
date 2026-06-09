@@ -17,6 +17,30 @@ export const siteSettingsType = defineType({
     }),
 
     defineField({
+    name: 'businessDescription',
+    title: 'Business Description',
+    type: 'text',
+    }),
+
+    defineField({
+    name: 'phone',
+    title: 'Phone Number',
+    type: 'string',
+    }),
+
+    defineField({
+    name: 'email',
+    title: 'Email Address',
+    type: 'string',
+    }),
+
+    defineField({
+    name: 'designerCredit',
+    title: 'Designer Credit',
+    type: 'string',
+    }),
+
+    defineField({
       name: 'navButtonText',
       title: 'Navbar Button Text',
       type: 'string',
