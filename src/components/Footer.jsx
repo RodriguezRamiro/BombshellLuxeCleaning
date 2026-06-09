@@ -121,7 +121,8 @@ function Footer() {
 
           <div className="social-icons">
 
-            <a {/* href="https://www.instagram.com/bombshell_luxe_cleaning/"> */}
+            {/* href="https://www.instagram.com/bombshell_luxe_cleaning/"> */}
+            <a
             href={settings.instagramUrl}
             target="_blank"
             rel="noreferrer"
@@ -129,7 +130,8 @@ function Footer() {
               <FaInstagram />
             </a>
 
-            <a {/* href="https://www.facebook.com/people/BomBshell-Luxe-Cleaning/61572643995067/"> */}
+            {/* href="https://www.facebook.com/people/BomBshell-Luxe-Cleaning/61572643995067/"> */}
+            <a
             href={settings.facebookUrl}
             target="_blank"
             rel="noreferrer"
@@ -156,7 +158,7 @@ function Footer() {
         <p>
           {/* Designed by RodriguezTech Studios */}
           {settings.designerCredit}
-          
+
         </p>
 
       </div>

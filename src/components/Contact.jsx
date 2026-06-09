@@ -108,9 +108,10 @@ function Contact() {
         done
         */}
 
+        {/*"https://formspree.io/f/your_endpoint" */}
         <form
         className="contact-form"
-        action={contactData.formEndpoint} {/*"https://formspree.io/f/your_endpoint" */}
+        action={contactData.formEndpoint}
         method="POST"
         >
 
