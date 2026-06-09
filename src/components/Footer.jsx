@@ -13,7 +13,23 @@ import {
   FaFacebookF
 } from 'react-icons/fa'
 
+import { useEffect, useState } from 'react'
+import { client } from '../sanityClient'
+
 function Footer() {
+
+  const [settings, setSettings] = useState(null)
+
+  useEffect(() => {
+
+    client
+      .fetch(`*[_type == "siteSettings"][0]`)
+      .then((data) => setSettings(data))
+      .catch(console.error)
+
+    }, [])
+
+    if (!settings) return null
 
   return (
 
@@ -26,15 +42,18 @@ function Footer() {
         <div className="footer-brand">
 
           <h2>
-            Bombshell Luxe Cleaning
+            {/* Bombshell Luxe Cleaning */}
+            {settings.businessName}
           </h2>
 
           <p>
 
-            Premium residential and luxury
+            {/* Premium residential and luxury
             cleaning experiences designed
             for elegance, comfort, and
-            spotless perfection.
+            spotless perfection. */}
+
+            {settings.businessDescription}
 
           </p>
 
@@ -46,21 +65,21 @@ function Footer() {
             Navigation
           </h3>
 
-          <a href="#services">
-            Services
+          {settings.navigationLinks.map((link, index) => (
+
+          <a
+          key={index}
+          href={link.href}
+        >
+            {/* Services */}
+            {/* Transformation */}
+            {/* Promotions */}
+            {/* Contact */}
+
+            {link.label}
           </a>
 
-          <a href="#transformations">
-            Transformations
-          </a>
-
-          <a href="#promotions">
-            Promotions
-          </a>
-
-          <a href="#contact">
-            Contact
-          </a>
+          ))}
 
         </div>
 
@@ -75,7 +94,8 @@ function Footer() {
             <Phone />
 
             <span>
-              (941) 960-6984
+              {/* (941) 960-6984 */}
+              {settings.phone}
             </span>
 
           </div>
@@ -85,7 +105,8 @@ function Footer() {
             <Mail />
 
             <span>
-              agodoy@bombshell-luxecleaning.com
+              {/* agodoy@bombshell-luxecleaning.com */}
+              {settings.email}
             </span>
 
           </div>
@@ -100,11 +121,19 @@ function Footer() {
 
           <div className="social-icons">
 
-            <a href="https://www.instagram.com/bombshell_luxe_cleaning/">
+            <a {/* href="https://www.instagram.com/bombshell_luxe_cleaning/"> */}
+            href={settings.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            >
               <FaInstagram />
             </a>
 
-            <a href="https://www.facebook.com/people/BomBshell-Luxe-Cleaning/61572643995067/">
+            <a {/* href="https://www.facebook.com/people/BomBshell-Luxe-Cleaning/61572643995067/"> */}
+            href={settings.facebookUrl}
+            target="_blank"
+            rel="noreferrer"
+            >
               <FaFacebookF />
             </a>
 
@@ -117,12 +146,17 @@ function Footer() {
       <div className="footer-bottom">
 
         <p>
-          © 2026 Bombshell Luxe Cleaning.
-          All rights reserved.
+          {/* © 2026 Bombshell Luxe Cleaning.
+          All rights reserved. */}
+
+          {settings.footerText}
+
         </p>
 
         <p>
-          Designed by RodriguezTech Studios
+          {/* Designed by RodriguezTech Studios */}
+          {settings.designerCredit}
+          
         </p>
 
       </div>
