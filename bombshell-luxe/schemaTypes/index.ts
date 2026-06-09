@@ -7,6 +7,7 @@ import { transformationType } from './transformation'
 import { promotionsSectionType } from './promotionsSection'
 import { promotionType } from './promotion'
 import { contactType } from './contact'
+import { siteSettingsType } from './siteSettings'
 
 
 export const schemaTypes = [
@@ -18,5 +19,6 @@ export const schemaTypes = [
   transformationType,
   promotionsSectionType,
   promotionType,
-  contactType
+  contactType,
+  siteSettingsType
 ]

@@ -14,6 +14,8 @@ import {
   useState
 } from 'react'
 
+import { client } from '../sanityClient'
+
 
 function Navbar() {
 
@@ -32,6 +34,15 @@ function Navbar() {
       )
 
     })
+
+    useEffect(() => {
+
+      client
+        .fetch(`*[_type == "siteSettings"][0]`)
+        .then((data) => setSettings(data))
+        .catch(console.error)
+
+      }, [])
 
   // Scroll Effect
   useEffect(() => {
@@ -80,6 +91,8 @@ function Navbar() {
 
   }
 
+  if (!settings) return null
+
   return (
 
     <nav
@@ -94,115 +107,96 @@ function Navbar() {
       href="#"
       className="logo"
       >
-        Bombshell Luxe
+        {/* Bombshell Luxe */}
+        {setting.bussinessName}
 
         </a>
 
       <div className="nav-links">
 
-        <a href="#services">
-          Services
-        </a>
+      {settings.navigationLinks.map((link, index) => (
 
-        <a href="#transformations">
-          Transformations
-        </a>
+      <a
+      key={index}
+      href={link.href}
+      >
 
-        <a href="#promotions">
-          Promotions
-        </a>
+      {link.label}
 
-        <a href="#contact">
-          Contact
-        </a>
+      </a>
+
+      ))}
 
       </div>
 
       <a
-      href="#contact"
+      href={settings.navButtonLink}
       className="nav-btn"
       >
-        Book Now
+
+      {settings.navButtonText}
+
       </a>
 
       <button
-        className="theme-toggle"
-        onClick={toggleTheme}
+      className="theme-toggle"
+      onClick={toggleTheme}
       >
 
-        {
-          theme === 'light'
-            ? <Moon />
-            : <Sun />
-        }
+      {
+      theme === 'light'
+      ? <Moon />
+      : <Sun />
+      }
 
       </button>
 
       <button
-        className="menu-toggle"
-        onClick={() =>
-          setMenuOpen(!menuOpen)
-        }
+      className="menu-toggle"
+      onClick={() =>
+        setMenuOpen(!menuOpen)
+      }
       >
 
-        {
-          menuOpen
-            ? <X />
-            : <Menu />
-        }
+      {
+      menuOpen
+      ? <X />
+      : <Menu />
+      }
 
       </button>
 
       <div
-        className={
-          menuOpen
-            ? 'mobile-menu active'
-            : 'mobile-menu'
-        }
+      className={
+        menuOpen
+        ? 'mobile-menu active'
+        : 'mobile-menu'
+      }
       >
 
-        <a
-          href="#services"
-          onClick={() =>
-            setMenuOpen(false)
-          }
-        >
-          Services
-        </a>
+      {settings.navigationLinks.map((link, index) => (
 
         <a
-          href="#transformations"
-          onClick={() =>
-            setMenuOpen(false)
-          }
+        key={index}
+        href={link.href}
+
+        onClick={() =>
+          setMenuOpen(false)
+        }
         >
-          Transformations
+
+        {link.label}
+
         </a>
 
-        <a
-          href="#promotions"
-          onClick={() =>
-            setMenuOpen(false)
-          }
-        >
-          Promotions
-        </a>
+        ))}
 
-        <a
-          href="#contact"
-          onClick={() =>
-            setMenuOpen(false)
-          }
-        >
-          Contact
-        </a>
+        </div>
 
-      </div>
+        </nav>
 
-    </nav>
+        )
 
-  )
-
-}
+      }
 
 export default Navbar
