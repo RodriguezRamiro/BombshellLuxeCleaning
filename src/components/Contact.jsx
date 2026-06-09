@@ -9,7 +9,22 @@ import {
   MapPin
 } from 'lucide-react'
 
+import { useEffect, useState } from 'react'
+import { client } from '../sanityClient'
+
 function Contact() {
+
+  const [contactData, setContactData] = useState(null)
+
+  useEffect(() => {
+
+    client
+    .fetch(`*[_type == "contact"][0]`)
+    .then((data) => setContactData(data))
+    .catch(console.error)
+  }, [])
+
+  if (!contactData) return null
 
   return (
 
@@ -24,20 +39,24 @@ function Contact() {
         <div className="contact-info">
 
           <p className="contact-label">
-            Luxury Booking Experience
+            {/* Luxury Booking Experience */}
+            {contactData.label}
           </p>
 
           <h2>
-            Your Space Deserves
-            The Bombshell Treatment
+            {/*  Your Space Deserves
+            The Bombshell Treatment */}
+            {contactData.heaeding}
           </h2>
 
           <p className="contact-description">
 
-            Experience premium residential,
+            {/* Experience premium residential,
             Airbnb, and deep cleaning services
             tailored for clients who value elegance,
-            detail, and exceptional presentation.
+            detail, and exceptional presentation. */}
+
+            {contactData.description}
 
           </p>
 
@@ -48,7 +67,8 @@ function Contact() {
               <Phone />
 
               <span>
-                (941) 960-6984
+                {/* (941) 960-6984 */}
+                {contactData.phone}
               </span>
 
             </div>
@@ -58,7 +78,8 @@ function Contact() {
               <Mail />
 
               <span>
-                agodoy@bombshell-luxecleaning.com
+                {/* agodoy@bombshell-luxecleaning.com */}
+                {contactData.email}
               </span>
 
             </div>
@@ -68,7 +89,8 @@ function Contact() {
               <MapPin />
 
               <span>
-                Tampa Bay • Wesley Chapel • St. Pete
+                {/* Tampa Bay • Wesley Chapel • St. Pete */}
+                {contactData.location}
               </span>
 
             </div>
@@ -88,7 +110,7 @@ function Contact() {
 
         <form
         className="contact-form"
-        action="https://formspree.io/f/your_endpoint"
+        action={contactData.formEndpoint} {/*"https://formspree.io/f/your_endpoint" */}
         method="POST"
         >
 
@@ -118,7 +140,8 @@ function Contact() {
           ></textarea>
 
           <button type="submit">
-            Request Luxury Cleaning
+            {/* Request Luxury Cleaning */}
+            {contactData.buttonText}
           </button>
 
         </form>
