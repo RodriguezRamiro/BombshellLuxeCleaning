@@ -54,6 +54,13 @@ export const servicesType = defineType({
               },
             }),
 
+            defineField({
+              name: 'featured',
+              title: 'Featured Service',
+              type: 'boolean',
+              initialValue: false,
+            }),
+
           ],
         },
       ],
