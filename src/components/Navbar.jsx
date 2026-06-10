@@ -19,6 +19,8 @@ import { client } from '../sanityClient'
 
 function Navbar() {
 
+  const [settings, setSettings] = useState(null)
+
   const [menuOpen, setMenuOpen] =
     useState(false)
 
@@ -108,13 +110,13 @@ function Navbar() {
       className="logo"
       >
         {/* Bombshell Luxe */}
-        {setting.bussinessName}
+        {settings.businessName}
 
         </a>
 
       <div className="nav-links">
 
-      {settings.navigationLinks.map((link, index) => (
+      {settings.navigationLinks?.map((link, index) => (
 
       <a
       key={index}
@@ -174,7 +176,7 @@ function Navbar() {
       }
       >
 
-      {settings.navigationLinks.map((link, index) => (
+      {settings.navigationLinks?.map((link, index) => (
 
         <a
         key={index}
