@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 
 import { useEffect, useState } from 'react'
 import { client } from '../sanityClient'
+import { urlFor } from '../urlFor'
 
 function Hero() {
 
@@ -29,7 +30,14 @@ function Hero() {
 
   return (
 
-    <section className="hero">
+    <section
+      className="hero"
+      style={{
+        backgroundImage: hero.backgroundImage
+          ? `url(${urlFor(hero.backgroundImage).url()})`
+          : 'undefined',
+      }}
+    >
 
       <Particles />
 
