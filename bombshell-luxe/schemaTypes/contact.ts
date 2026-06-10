@@ -47,6 +47,12 @@ export const contactType = defineType({
     }),
 
     defineField({
+        name: 'businessHours',
+        title: 'Business Hours',
+        type: 'text',
+      }),
+
+    defineField({
       name: 'formEndpoint',
       title: 'FormSpree Endpoint',
       type: 'url',
