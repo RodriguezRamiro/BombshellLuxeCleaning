@@ -29,14 +29,21 @@ export const heroType = defineType({
     }),
 
     defineField({
-      name: 'primaryButton',
-      title: 'Primary Button',
+      name: 'primaryButtonText',
+      title: 'Primary Button Text',
+      type: 'string',
+    }),
+
+
+    defineField({
+      name: 'secondaryButtonText',
+      title: 'Secondary Button Text',
       type: 'string',
     }),
 
     defineField({
-      name: 'secondaryButton',
-      title: 'Secondary Button',
+      name: 'secondaryButtonLink',
+      title: 'Secondary Button Link',
       type: 'string',
     }),
 
@@ -51,4 +58,3 @@ export const heroType = defineType({
 
   ],
 })
-
