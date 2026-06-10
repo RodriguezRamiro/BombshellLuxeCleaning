@@ -56,6 +56,12 @@ export const testimonialsSectionType = defineType({
               type: 'string',
             }),
 
+            defineField({
+              name: 'location',
+              title: 'Client Location',
+              type: 'string',
+            }),
+
           ],
         },
       ],
