@@ -20,7 +20,12 @@ function Hero() {
 
   },[])
 
-  if (!hero) return null
+  if (!hero)
+    return (
+    <section className="hero loading">
+      Loading...
+    </section>
+    )
 
   return (
 
