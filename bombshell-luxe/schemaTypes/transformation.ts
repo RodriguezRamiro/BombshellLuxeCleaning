@@ -11,6 +11,18 @@ export const transformationType = defineType({
   fields: [
 
     defineField({
+      name: 'title',
+      title: 'Transformation Title',
+      type: 'string',
+    }),
+
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+    }),
+
+    defineField({
       name: 'beforeImage',
       title: 'Before Image',
       type: 'image',
