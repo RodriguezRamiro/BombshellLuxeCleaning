@@ -64,13 +64,18 @@ function Hero() {
 
         <div className="hero-buttons">
 
-          <button className="primary-btn">
-          {hero.primaryButton}
-          </button>
+          <a
+          href={hero.primaryButtonLink}
+          className="primary-btn"
+>
+          {hero.primaryButtonText}
+          </a>
 
-          <button className="secondary-btn">
-          {hero.secondaryButton}
-          </button>
+          <a
+          href={hero.secondaryButtonLink}
+          className="secondary-btn">
+          {hero.secondaryButtonText}
+          </a>
 
         </div>
 
@@ -81,5 +86,5 @@ function Hero() {
   )
 
   }
-  
+
 export default Hero
