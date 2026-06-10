@@ -21,5 +21,12 @@ export const promotionsSectionType = defineType({
       type: 'string',
     }),
 
+    defineField({
+        name: 'active',
+        title: 'Promotion Active',
+        type: 'boolean',
+        initialValue: true,
+      }),
+
   ],
 })
