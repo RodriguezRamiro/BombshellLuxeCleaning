@@ -34,6 +34,11 @@ export const heroType = defineType({
       type: 'string',
     }),
 
+    defineField({
+        name: 'primaryButtonLink',
+        title: 'Primary Button Link',
+        type: 'string',
+      }),
 
     defineField({
       name: 'secondaryButtonText',
