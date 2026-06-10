@@ -34,6 +34,12 @@ export const testimonialsSectionType = defineType({
     }),
 
     defineField({
+      name: 'averageRating',
+      title: 'Average Rating',
+      type: 'string',
+    }),
+
+    defineField({
       name: 'stats',
       title: 'Trust Stats',
       type: 'array',
