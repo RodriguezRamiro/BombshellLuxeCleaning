@@ -60,7 +60,7 @@ function Testimonials() {
 
       <div className="trust-stats">
 
-      {sectionData.stats.map((stat, index) => (
+      {sectionData.stats?.map((stat, index) => (
 
         <div className="stat-card"
           key={index}
