@@ -130,6 +130,12 @@ function Testimonials() {
               {item.name}
             </h4>
 
+              {item.location && (
+                <span>
+                  {item.location}
+                </span>
+              )}
+
           </motion.div>
 
 
