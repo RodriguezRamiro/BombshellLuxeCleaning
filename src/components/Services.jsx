@@ -37,7 +37,7 @@ function Services() {
 
       <div className="services-grid">
 
-      {servicesData.servicesList.map((service, index) => (
+      {servicesData.servicesList?.map((service, index) => (
 
           <motion.div
             className="service-card"
@@ -69,9 +69,18 @@ function Services() {
           >
 
             <div className="service-icon">
-            <img
-            src={urlFor(service.icon).url()}
-            alt={service.title} />
+            {service.icon ? (
+
+              <img
+              src={urlFor(service.icon).url()}
+              alt={service.title}
+              />
+
+            ) : (
+
+              <span>✨</span>
+
+            )}
             </div>
 
             <h3>
@@ -87,7 +96,7 @@ function Services() {
         ))}
 
       </div>
-      
+
     </Reveal>
 
     </section>
