@@ -143,7 +143,7 @@ function Testimonials() {
 
       </div>
       <div className="reviews-actions">
-      {sectionData.googleReviewsUrl && (
+
         <a className="reviews-btn"
         href={sectionData.googleReviewsUrl}
         target="_blank"
@@ -151,9 +151,7 @@ function Testimonials() {
         >
           Read More Reviews
         </a>
-      )};
 
-      {sectionData.googleReviewsUrl && (
         <a
         className="reviews-btn"
         href={sectionData.leaveReviewUrl}
@@ -163,7 +161,6 @@ function Testimonials() {
           Leave A Review
         </a>
 
-      )}
       </div>
       </Reveal>
 
