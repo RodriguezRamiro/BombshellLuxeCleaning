@@ -17,6 +17,19 @@ export const promotionType = defineType({
     }),
 
     defineField({
+      name: 'active',
+      title: 'Promotion Active',
+      type: 'boolean',
+      initialValue: true,
+      }),
+
+    defineField({
+      name: 'badge',
+      title: 'Promotion Badge',
+      type: 'string',
+    }),
+
+    defineField({
       name: 'description',
       title: 'Promotion Description',
       type: 'text',
