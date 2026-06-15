@@ -23,7 +23,7 @@ function Promotions() {
     .catch(console.error)
 
     client
-    .fetch(`*[_type == "promotion"]`)
+    .fetch(`*[_type == "promotion" && active == true] | order(displayOrder asc)`)
     .then((data) => setPromotions(data))
     .catch(console.error)
 
