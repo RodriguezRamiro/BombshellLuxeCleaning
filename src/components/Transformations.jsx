@@ -10,19 +10,22 @@ import { urlFor } from '../urlFor'
 
 function Transformations() {
 
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedImage, setSelectedImage] = useState({
+    src: '',
+    title: '',
+  })
 
   const [sectionData, setSectionData] = useState(null)
   const [transformations, setTransformations] = useState([])
 
   useEffect(() => {
     client
-    .fetch(`*[_type == "transformationsSection"][0]`)
+    .fetch(`*[_type == "transformationsSection" && active == true][0]`)
     .then((data) => setSectionData(data))
     .catch(console.error)
 
     client
-    .fetch(`*[_type == "transformations"]`)
+    .fetch(`*[_type == "transformations" && active == true]`)
     .then((data) => setTransformations(data))
     .catch(console.error)
 
@@ -58,12 +61,27 @@ function Transformations() {
 
           <div
             className="transformation-card"
-            key={index}
+            key={item._id}
           >
+
+            {item.description && (
+
+              <h3 className="transfomation-title">
+                {item.title}
+              </h3>
+            )}
+
+            {item.description && (
+              <p className="transformation-description">
+                {item.description}
+              </p>
+            )}
 
             <div className="image-wrapper">
 
               <div className="image-box">
+
+                {item.beforeImage && (
 
                 <img
                   onClick={() =>
@@ -77,6 +95,8 @@ function Transformations() {
 
                 />
 
+                )}
+
                 <span className="label before">
                   Before
                 </span>
@@ -84,6 +104,8 @@ function Transformations() {
               </div>
 
               <div className="image-box">
+
+                {item.afterImage && (
 
                 <img
                 onClick={() =>
@@ -95,6 +117,8 @@ function Transformations() {
                     src={urlFor(item.afterImage).url()}
                     alt={item.afterAlt}
                     />
+
+                )}
 
                 <span className="label after">
                   After
