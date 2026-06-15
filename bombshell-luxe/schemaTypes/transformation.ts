@@ -11,6 +11,13 @@ export const transformationType = defineType({
   fields: [
 
     defineField({
+      name: 'active',
+      title: 'Transformation Active',
+      type: 'boolean',
+      initialValue: true,
+      }),
+
+    defineField({
       name: 'title',
       title: 'Transformation Title',
       type: 'string',
