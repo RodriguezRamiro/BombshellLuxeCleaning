@@ -103,6 +103,13 @@ function Promotions() {
 
             <div className="promo-content">
 
+                  {/* promo badge "limitedTime" */}
+              {promo.badge && (
+                <span className="promo-badge">
+                  {promo.badge}
+                  </span>
+              )}
+
               <h3>
                 {promo.title}
               </h3>
