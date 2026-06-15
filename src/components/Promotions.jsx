@@ -84,6 +84,7 @@ function Promotions() {
           >
 
             <div className="promo-image">
+            {promo.image && (
 
             <img onClick={() =>
               setSelectedPromo(
@@ -94,6 +95,7 @@ function Promotions() {
                 src={urlFor(promo.image).url()}
                 alt={promo.imageAlt}
                 />
+            )}
 
               <div className="promo-overlay"></div>
 
