@@ -21,6 +21,13 @@ export const transformationsSectionType = defineType({
       title: 'Section Title',
       type: 'string',
     }),
+    
+    defineField({
+        name: 'active',
+        title: 'Section Active',
+        type: 'boolean',
+        initialValue: true,
+      }),
 
-  ],
-})
+    ],
+  })
