@@ -65,7 +65,7 @@ function Footer() {
             Navigation
           </h3>
 
-          {settings.navigationLinks.map((link, index) => (
+          {settings.navigationLinks?.map((link, index) => (
 
           <a
           key={index}
