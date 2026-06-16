@@ -11,6 +11,21 @@ export const siteSettingsType = defineType({
   fields: [
 
     defineField({
+      name: 'copyrightText',
+      title: 'Copyright Text',
+      type: 'string',
+    }),
+
+    defineField({
+      name: 'logo',
+      title: 'Business Logo',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+
+    defineField({
       name: 'businessName',
       title: 'Business Name',
       type: 'string',
