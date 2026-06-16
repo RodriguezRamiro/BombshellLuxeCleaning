@@ -19,7 +19,7 @@ function Contact() {
   useEffect(() => {
 
     client
-    .fetch(`*[_type == "contact"][0]`)
+    .fetch(`*[_type == "contact" && active == true][0]`)
     .then((data) => setContactData(data))
     .catch(console.error)
   }, [])
@@ -84,6 +84,7 @@ function Contact() {
 
             </div>
 
+
             <div className="detail-item">
 
               <MapPin />
@@ -93,6 +94,15 @@ function Contact() {
                 {contactData.location}
               </span>
 
+
+
+            </div>
+
+            <div className="detail-item">
+
+              <span>
+              {contactData.businessHours}
+              </span>
             </div>
 
           </div>
@@ -108,10 +118,10 @@ function Contact() {
         done
         */}
 
-        {/*"https://formspree.io/f/your_endpoint" */}
+        {/* "https://formspree.io/f/your_endpoint" */}
         <form
         className="contact-form"
-        action={contactData.formEndpoint}
+        action={contactData.formEndpoint || '#'}
         method="POST"
         >
 

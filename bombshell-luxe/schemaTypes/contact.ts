@@ -11,6 +11,13 @@ export const contactType = defineType({
   fields: [
 
     defineField({
+      name: 'active',
+      title: 'Section Active',
+      type: 'boolean',
+      initialValue: true,
+    }),
+
+    defineField({
       name: 'label',
       title: 'Contact Label',
       type: 'string',
