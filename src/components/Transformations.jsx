@@ -64,9 +64,9 @@ function Transformations() {
             key={item._id}
           >
 
-            {item.description && (
+            {item.title && (
 
-              <h3 className="transfomation-title">
+              <h3 className="transformation-title">
                 {item.title}
               </h3>
             )}
@@ -85,9 +85,10 @@ function Transformations() {
 
                 <img
                   onClick={() =>
-                    setSelectedImage(
-                      urlFor(item.beforeImage).url()
-                    )
+                    setSelectedImage({
+                      src: urlFor(item.beforeImage).url(),
+                      title: item.title,
+                  })
                   }
 
                   src={urlFor(item.beforeImage).url()}
@@ -109,9 +110,10 @@ function Transformations() {
 
                 <img
                 onClick={() =>
-                  setSelectedImage(
-                    urlFor(item.afterImage).url()
-                    )
+                  setSelectedImage({
+                    src: urlFor(item.afterImage).url(),
+                    title: item.title,
+                  })
                     }
 
                     src={urlFor(item.afterImage).url()}
@@ -135,28 +137,43 @@ function Transformations() {
       </div>
     </Reveal>
 
-    {selectedImage && (
+    {selectedImage?.src && (
 
 <div
   className="image-modal"
-  onClick={() => setSelectedImage(null)}
+  onClick={() => setSelectedImage({
+    src: "",
+    title: "",
+    })
+  }
 >
 
   <div
     className="modal-content"
     onClick={(e) => e.stopPropagation()}
-  >
+
+    >
 
     <button
       className="close-modal"
-      onClick={() => setSelectedImage(null)}
+      onClick={() => setSelectedImage({
+        src: "",
+        title: "",
+      })
+    }
     >
       ×
     </button>
 
+    {selectedImage.title && (
+      <h3 className="modal-title">
+        {selectedImage.title}
+      </h3>
+    )}
+    
     <img
-      src={selectedImage}
-      alt="Expanded transformation"
+      src={selectedImage.src}
+      alt={selectedImage.title}
     />
 
   </div>
