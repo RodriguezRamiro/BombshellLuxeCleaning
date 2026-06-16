@@ -46,7 +46,7 @@ function Contact() {
           <h2>
             {/*  Your Space Deserves
             The Bombshell Treatment */}
-            {contactData.heaeding}
+            {contactData.heading}
           </h2>
 
           <p className="contact-description">
