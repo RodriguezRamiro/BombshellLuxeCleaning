@@ -32,11 +32,7 @@ function Hero() {
 
     <section
       className="hero"
-      style={{
-        backgroundImage: hero.backgroundImage
-          ? `url(${urlFor(hero.backgroundImage).url()})`
-          : 'undefined',
-      }}
+      {/* CMS content */}
     >
 
       <Particles />
