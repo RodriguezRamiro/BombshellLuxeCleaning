@@ -22,19 +22,39 @@
 
   }
 
+  .hero-container {
 
-  .hero-content{
+    width: min(1200px, 92%);
 
-    position:relative;
-    z-index:2;
+    margin: 0 auto;
 
-    max-width:850px;
+    display: grid;
 
-    animation:fadeUp 1.2s ease;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
 
-    padding-inline:1rem;
+    gap: 4rem;
+
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
 
   }
+
+
+  .hero-content {
+
+    max-width: 620px;
+
+    animation: fadeUp 1.2s ease;
+
+    text-align: left;
+
+  }
+
+
 
   .hero-subtitle{
 
@@ -62,19 +82,18 @@
 
   }
 
-  .hero-description{
+  .hero-description {
 
-    color:var(--text-secondary);
+    color: var(--text-secondary);
 
-    line-height:1.8;
+    line-height: 1.8;
 
-    font-size:1.1rem;
+    font-size: 1.1rem;
 
-    max-width:700px;
-
-    margin:auto auto 3rem;
+    margin-bottom: 3rem;
 
   }
+  
 
   .hero-buttons{
 
