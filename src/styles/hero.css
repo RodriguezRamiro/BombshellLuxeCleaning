@@ -24,12 +24,7 @@
 
   }
 
-  /* missing immage guard */
-  .hero {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+  
 
   .hero-overlay {
     background:
