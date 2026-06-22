@@ -31,13 +31,13 @@ function Hero() {
   return (
 
     <section
-      className="hero"
-      {/* CMS content */}
+    className="hero"
     >
+      
 
       <Particles />
 
-      <div className="hero-overlay"></div>
+      <div className="hero-container">
 
     <motion.div
       className="hero-content"
@@ -90,7 +90,25 @@ function Hero() {
 
       </motion.div>
 
+      <div className="hero-visual">
+
+        {hero.backgroundImage && (
+
+          <img
+          src={urlFor(hero.backgroundImage).url()}
+          alt={hero.heading}
+
+          />
+
+        )}
+
+      </div>
+
+    </div>
+
     </section>
+
+
 
   )
 
