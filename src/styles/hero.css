@@ -93,15 +93,15 @@
     margin-bottom: 3rem;
 
   }
-  
 
-  .hero-buttons{
 
-    display:flex;
-    justify-content:center;
-    gap:1.5rem;
+  .hero-buttons {
 
-    flex-wrap:wrap;
+    display: flex;
+
+    gap: 1.5rem;
+
+    flex-wrap: wrap;
 
   }
 
