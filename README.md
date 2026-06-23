@@ -1,69 +1,70 @@
-For Later Reference.
+# Bombshell Luxe Cleaning
 
+A premium React + Sanity CMS website template designed for cleaning companies, luxury home services, Airbnb cleaning providers, and modern service-based businesses.
 
-Your React/Vite business template = the frontend website
-Sanity.io = the content management backend/dashboard
-Your client logs into Sanity Studio and edits content
-The website automatically pulls updated content from Sanity
+## Features
 
-That means:
+* Fully Responsive Design
+* Sanity CMS Integration
+* FormSpree Contact Form
+* Services Section
+* Before & After Transformations
+* Promotions & Special Offers
+* Testimonials
+* Contact Form
+* Social Media Links
+* Light & Dark Mode
+* Framer Motion Animations
+* Vercel Deployment Ready
 
-they can change hero text
-update services
-add testimonials
-swap images
-edit pricing
-publish blog posts
-etc.
-without touching code.
+## Built With
 
-invite my clients as editors so they have access to their website.
-invite clients as editors
+* React
+* Vite
+* Sanity CMS
+* FormSpree
+* Framer Motion
+* CSS
 
-How it works
+## Quick Start
 
-YOU:
+Install dependencies:
 
-create all Sanity projects
-own the organization
-deploy the Studio
-manage billing
-invite clients as editors
+npm install
 
-CLIENT:
+Start development server:
 
-gets invited by email
-logs into THEIR content dashboard
-edits only their website
+npm run dev
 
-best starting setup
-Easier management
+Build for production:
 
-You control:
+npm run build
 
-deployments
-schemas
-updates
-backups
-permissions
-troubleshooting
-Easier scaling
+## CMS Management
 
-You can manage:
+Content is managed through Sanity Studio.
 
-Client A
-Client B
-Client C
+https://www.sanity.io/
 
-all from one dashboard.
+Website owners can update:
 
-Better recurring revenue
+* Hero Content
+* Services
+* Promotions
+* Testimonials
+* Contact Information
+* Navigation Links
+* Footer Information
+* Images
 
-You can charge:
+without modifying code.
 
-hosting
-maintenance
-CMS management
-edits/support
+## Deployment
 
-monthly.
+This template is optimized for deployment on Vercel. easly adjusted to custom domain.
+
+(update enviroment variables)
+
+## Support
+
+Please refer to the SETUP-GUIDE.md document included with this purchase for complete installation and configuration instructions.
